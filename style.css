@@ -1,164 +1,99 @@
-body {
-  font-family: 'Noto Nastaliq Urdu', serif;
-  background: #faf8f5;
+/* Reset & Base */
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  direction: rtl;
-  text-align: right;
-  color: #2e1a0f;
 }
 
-header {
-  background-color: #4e2600;
-  color: white;
+body {
+  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+  background-color: #f3f4f6;
   padding: 30px 20px;
+  color: #222;
+  line-height: 1.7;
+}
+
+/* Header */
+header {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: #fff;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 40px 20px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 header h1 {
-  font-size: 36px;
-  margin: 0;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
 }
 
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 15px 0 0 0;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
+header p {
+  font-size: 1.1rem;
 }
 
-nav a {
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
-  transition: color 0.3s ease;
+/* Sections */
+section {
+  max-width: 1100px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
-nav a:hover {
-  color: #ffddaa;
+h2 {
+  color: #1e90ff;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #bbe1fa;
+  padding-bottom: 8px;
 }
 
-.hero {
-  background: linear-gradient(to left, #fffaf0, #fff2e6);
-  padding: 50px 20px;
-  text-align: center;
-  font-size: 24px;
-  border-bottom: 2px dashed #e0c9a6;
-}
-
-.products {
-  padding: 40px 20px;
-  background-color: #fff;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+/* Card Grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 20px;
 }
 
-.product {
-  background: #fff7f0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  padding: 20px;
-  border-radius: 16px;
-  width: 280px;
-  transition: transform 0.3s, box-shadow 0.3s;
+.card {
+  background: #fafafa;
+  border: 1px solid #e0e0e0;
+  padding: 18px 15px;
+  border-radius: 12px;
   text-align: center;
+  font-weight: 500;
+  color: #333;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease-in-out;
 }
 
-.product:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+.card:hover {
+  background: #f0faff;
+  transform: scale(1.04);
+  border-color: #90e0ef;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 }
 
-.product img {
-  width: 100%;
-  max-height: 250px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 12px;
-}
-
-.product h3 {
-  font-size: 22px;
-  margin: 10px 0 5px;
-  color: #4e2600;
-}
-
-.product p {
-  font-size: 16px;
-  color: #5c3b1e;
-}
-
-.contact {
-  padding: 40px 20px;
-  background: #fff9f3;
-  text-align: center;
-}
-
-.contact h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
-}
-
-.whatsapp-btn {
-  display: inline-block;
-  background-color: #25D366;
-  color: white;
-  padding: 14px 30px;
-  border-radius: 8px;
-  text-decoration: none;
+/* Lists */
+ul {
+  list-style: disc;
+  padding-left: 20px;
   margin-top: 10px;
-  font-weight: bold;
-  font-size: 18px;
-  transition: background-color 0.3s;
 }
 
-.whatsapp-btn:hover {
-  background-color: #1ebe5d;
-}
-
-footer {
-  background-color: #4e2600;
-  color: white;
-  text-align: center;
-  padding: 15px;
-  font-size: 14px;
-}
-
-@media screen and (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .products {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .product {
-    width: 90%;
-  }
-
-  .hero, .contact {
-    padding: 20px;
-    font-size: 20px;
-  }
-}
-.search {
-  text-align: center;
-  margin: 30px 0;
-}
-
-.search input {
-  width: 80%;
-  padding: 10px;
+/* Contact & Services */
+.contact p,
+.services li {
+  margin-bottom: 10px;
   font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
 }
 
+/* Footer */
+footer {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #777;
+  margin-top: 60px;
+}

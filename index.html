@@ -1,92 +1,126 @@
 <!DOCTYPE html>
-<html lang="ur" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
-  <title>مکتبہ الضحیٰ - ظفیر</title>
+  <title>Maktaba Adduha - Zafeer</title>
   <style>
     body {
-      font-family: 'Noto Nastaliq Urdu', serif;
-      background-color: #f8f8f8;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f2f5;
       margin: 0;
       padding: 20px;
-      line-height: 1.6;
       color: #333;
     }
     header {
-      background-color: #2c3e50;
+      background-color: #1a1a2e;
       color: white;
-      padding: 20px;
       text-align: center;
-      border-radius: 10px;
+      padding: 30px 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
     section {
-      background-color: white;
-      margin: 20px 0;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      max-width: 1000px;
+      margin: 30px auto;
+      background-color: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     }
     h2 {
-      color: #2980b9;
+      color: #0077b6;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #caf0f8;
+      padding-bottom: 5px;
     }
-    ul {
-      padding-right: 20px;
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+    .card {
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: scale(1.03);
+    }
+    .contact, .services {
+      margin-top: 20px;
     }
     footer {
       text-align: center;
-      margin-top: 40px;
-      color: #555;
+      margin-top: 50px;
+      color: #777;
+      font-size: 0.95rem;
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>السلام علیکم، میں ظفیر ہوں</h1>
-  <p>میں ایک Full Stack Developer اور سیکیورٹی کے شعبے میں سیکھنے والا ہوں۔</p>
+  <h1>Welcome, I am Zafeer</h1>
+  <p>A Full Stack Developer and security learner with a passion for Islamic books and perfumes.</p>
 </header>
 
 <section>
-  <h2>📚 ہماری اسلامی کتب:</h2>
-  <ul>
-    <li>تفسیر ابن کثیر</li>
-    <li>صحیح بخاری</li>
-    <li>صحیح مسلم</li>
-    <li>ریاض الصالحین</li>
-    <li>فقہ الاسلامی</li>
-    <li>احکام القرآن</li>
-    <li>فضائل اعمال</li>
-    <li>اسلامی عقائد</li>
-    <li>قرآن مع ترجمہ</li>
-    <li>دعاؤں کی کتاب</li>
-  </ul>
+  <h2>📚 Our Islamic Books</h2>
+  <div class="card-grid" id="books"></div>
 </section>
 
 <section>
-  <h2>🌸 ہمارے مشہور عطریات:</h2>
-  <ul>
-    <li>عود ہندی</li>
-    <li>عنبر</li>
-    <li>مکہ اسپیشل</li>
-    <li>سندور</li>
-    <li>سفید مشک</li>
-    <li>بلو اوشن</li>
-    <li>روز عطر</li>
-    <li>دیودار</li>
-    <li>کشمیر گلاب</li>
-    <li>مسک اللیل</li>
-  </ul>
+  <h2>🌸 Our Famous Perfumes</h2>
+  <div class="card-grid" id="perfumes"></div>
 </section>
 
-<section>
-  <h2>📍 رابطہ معلومات:</h2>
-  <p><strong>ادارہ:</strong> مکتبہ الضحیٰ، پَلندری</p>
-  <p><strong>موبائل:</strong> 0348 5202559</p>
+<section class="contact">
+  <h2>📍 Contact Info</h2>
+  <p><strong>Institute:</strong> Maktaba Adduha, Pallandri</p>
+  <p><strong>Phone:</strong> 0348 5202559</p>
+</section>
+
+<section class="services">
+  <h2>💼 Our Other Services</h2>
+  <ul>
+    <li>I design and develop websites.</li>
+    <li>Wholesale available: Islamic caps and pure attar perfumes.</li>
+  </ul>
 </section>
 
 <footer>
-  &copy; 2025 مکتبہ الضحیٰ - ظفیر
+  &copy; 2025 Maktaba Adduha - Zafeer
 </footer>
+
+<script>
+  const books = [
+    "Tafsir Ibn Kathir", "Sahih Bukhari", "Sahih Muslim", "Riyad-us-Saliheen",
+    "Fiqh al-Islami", "Ahkam al-Quran", "Fazail-e-Amaal", "Islamic Beliefs",
+    "Quran with Translation", "Book of Duas"
+  ];
+
+  const perfumes = [
+    "Oudh Hindi", "Amber", "Makkah Special", "Sandoor",
+    "White Musk", "Blue Ocean", "Rose Attar", "Deodar",
+    "Kashmir Rose", "Musk al-Lail"
+  ];
+
+  function populateGrid(id, items) {
+    const container = document.getElementById(id);
+    items.forEach(name => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.textContent = name;
+      container.appendChild(card);
+    });
+  }
+
+  populateGrid("books", books);
+  populateGrid("perfumes", perfumes);
+</script>
 
 </body>
 </html>
